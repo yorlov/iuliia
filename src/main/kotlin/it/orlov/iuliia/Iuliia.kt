@@ -11,3 +11,5 @@ object Iuliia {
         return translators[transliteration].translate(sentence)
     }
 }
+
+fun Transliteration.translate(sentence: String) = Iuliia.translate(sentence, this)

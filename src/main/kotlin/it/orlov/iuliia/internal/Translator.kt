@@ -2,7 +2,7 @@ package it.orlov.iuliia.internal
 
 import java.util.regex.Pattern
 
-class Translator(private val context: TransliterationContext) {
+class Translator(private val context: SchemaContext) {
 
     fun translate(sentence: String) = WORD_SEPARATOR.split(sentence)
         .flatMap { word ->

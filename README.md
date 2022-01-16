@@ -5,30 +5,14 @@
 Transliteration means representing Cyrillic data (mainly names and geographic locations) with Latin letters. It is used
 for international passports, visas, green cards, driving licenses, mail and goods delivery etc.
 
-`Iuliia` makes transliteration easy
-
-Kotlin
+`Iuliia` makes transliteration as easy as:
 
 ```kotlin
-import it.orlov.iuliia.Transliteration.MOSMETRO
+import it.orlov.iuliia.Schema.MOSMETRO
 import it.orlov.iuliia.translate
 
 fun main() {
     println(MOSMETRO.translate("Юлия"))
-}
-```
-
-Java
-
-```java
-import it.orlov.iuliia.Iulia;
-import it.orlov.iuliia.MOSMETRO;
-
-public class Application {
-
-    public static void main(String[] args) {
-        System.out.println(Iulia.translate("Юлия", MOSMETRO));
-    }
 }
 ```
 

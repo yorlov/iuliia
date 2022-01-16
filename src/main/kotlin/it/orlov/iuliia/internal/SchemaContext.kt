@@ -1,6 +1,6 @@
 package it.orlov.iuliia.internal
 
-class TransliterationContext(
+class SchemaContext(
     private val mapping: Map<String, String>,
     private val prevMapping: Map<String, String>,
     private val nextMapping: Map<String, String>,
@@ -20,5 +20,4 @@ class TransliterationContext(
     fun translate(ending: String): String? {
         return endingMapping[ending]
     }
-
 }

@@ -1,6 +1,9 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.6.10'
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
 }
 
 repositories {
@@ -37,4 +40,51 @@ compileKotlin {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+            pom {
+                name = 'Iuliia'
+                description = 'Transliterate Cyrillic → Latin in every possible way'
+                url = 'https://github.com/yorlov/iuliia'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'yorlov'
+                        name = 'Yuri Orlov'
+                        email = 'yuri.n.orlov@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:https://github.com/yorlov/iuliia.git'
+                    developerConnection = 'scm:git:https://github.com/yorlov/iuliia.git'
+                    url = 'https://github.com/yorlov/iuliia'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username = "$ossrhUsername"
+                password = "$ossrhPassword"
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.maven
 }

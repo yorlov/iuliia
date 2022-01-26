@@ -33,7 +33,7 @@ Gradle
 
 ```groovy
 dependencies {
-    implementation 'it.orlov.iuliia:iuliia:1.0.0'
+    implementation 'it.orlov.iuliia:iuliia:1.0.1'
 }
 ```
 
@@ -43,7 +43,7 @@ Maven
 <dependency>
     <groupId>it.orlov.iuliia</groupId>
     <artifactId>iuliia</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 

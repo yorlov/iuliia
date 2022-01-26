@@ -29,6 +29,7 @@ java {
         vendor = JvmVendorSpec.ADOPTOPENJDK
     }
     withSourcesJar()
+    withJavadocJar()
 }
 
 compileKotlin {
